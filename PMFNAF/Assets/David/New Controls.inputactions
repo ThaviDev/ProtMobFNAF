@@ -1,0 +1,86 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "9303f859-ebda-481e-9e9b-12164e34f689",
+            "actions": [
+                {
+                    "name": "TouchInput",
+                    "type": "PassThrough",
+                    "id": "88561c73-5034-4765-80c5-5fb720d2a7da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DragInput",
+                    "type": "PassThrough",
+                    "id": "6aa9c24e-fb27-4ab7-a1f9-fb8b17d1b733",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DragTest",
+                    "type": "Value",
+                    "id": "6c780a79-f557-4ce9-b8d6-4b0abfe1f73b",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dfa7ce56-672f-400d-80dc-6042b417bf68",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";MyControlSchemes",
+                    "action": "TouchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49fd9ad4-e991-4850-a59c-b911fb27a305",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";MyControlSchemes",
+                    "action": "DragInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "052ed923-f448-483a-bacd-2ed6bc45e67c",
+                    "path": "<Touchscreen>/touch0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";MyControlSchemes",
+                    "action": "DragTest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "MyControlSchemes",
+            "bindingGroup": "MyControlSchemes",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

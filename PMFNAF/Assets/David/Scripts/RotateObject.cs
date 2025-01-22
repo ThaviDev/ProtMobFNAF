@@ -1,14 +1,19 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
+
 public class RotateObject : MonoBehaviour
 {
     [SerializeField] Camera _cam;
-    [SerializeField] float _pcRotSpeed;
-    [SerializeField] float _mobRotSpeed;
+    [SerializeField] float _pcRotSpeed = 10f;
+    [SerializeField] float _mobRotSpeed = 10f;
+    bool _dragging = false;
+    [SerializeField] Rigidbody _ObjRB;
     void Start()
     {
-        
     }
 
+    /*
     private void OnMouseDrag()
     {
         float rot = Input.GetAxis("Mouse X") * _pcRotSpeed;
@@ -25,11 +30,32 @@ public class RotateObject : MonoBehaviour
         Vector3 right = Vector3.Cross
             (rhs: _cam.transform.up, 
             rhs: _cam.transform.position - _cam.transform.position);
-        */
+
 
     }
+            */
     void Update()
     {
-        
+        if (Input.GetMouseButtonUp(0))
+        {
+            _dragging = false;
+        }
+    }
+
+    void OnMouseDrag()
+    {
+        _dragging = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (_dragging)
+        {
+            //float AxisX = Input.GetAxis ("Mouse X") * _pcRotSpeed * Time.fixedDeltaTime;
+            //float AxisY = Input.GetAxis ("Mouse Y") * _pcRotSpeed * Time.fixedDeltaTime;
+
+            //_ObjRB.AddTorque(Vector3.down * x);
+            //_ObjRB.AddTorque(Vector3.right * y);
+        }
     }
 }
