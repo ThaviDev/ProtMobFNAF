@@ -18,12 +18,12 @@ MonoBehaviour:
     m_Storage: []
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 5356878891935482305
-      m_GuidHigh: 3553943747638170041
+      m_GuidLow: 5053583891412903366
+      m_GuidHigh: 3797299082357032374
     m_SerializedTextureGuid:
-      m_GuidLow: 2874685171892054606
-      m_GuidHigh: 3569044238276371241
+      m_GuidLow: 11242118179789415322
+      m_GuidHigh: 6523035598651850280
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
-    m_Name: Cuando
+    m_Name: Astronaut
     m_Texture: {fileID: 0}
