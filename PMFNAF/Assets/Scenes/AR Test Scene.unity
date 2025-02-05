@@ -672,7 +672,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1684,12 +1685,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895414903}
   m_CullTransparentMesh: 1
---- !u!20 &910914761 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2512387469002778331, guid: 48cb3fb68c91eb94999fd99957eb0cae,
-    type: 3}
-  m_PrefabInstance: {fileID: 1748247286}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982522654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,10 +2581,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55712f298e089014cbbd7ea18caf755f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cam: {fileID: 910914761}
   _pcRotSpeed: 5
   _mobRotSpeed: 5
-  _ObjRB: {fileID: 1199599073}
+  _startTouchPosition: {x: 0, y: 0}
+  _currentTouchPosition: {x: 0, y: 0}
+  _rb: {fileID: 0}
 --- !u!65 &1199599069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4073,7 +4069,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:

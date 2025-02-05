@@ -6510,9 +6510,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55712f298e089014cbbd7ea18caf755f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cam: {fileID: 188022851}
   _pcRotSpeed: 0
   _mobRotSpeed: 0
+  _startTouchPosition: {x: 0, y: 0}
+  _currentTouchPosition: {x: 0, y: 0}
+  _rb: {fileID: 0}
 --- !u!1 &1756045394
 GameObject:
   m_ObjectHideFlags: 0
