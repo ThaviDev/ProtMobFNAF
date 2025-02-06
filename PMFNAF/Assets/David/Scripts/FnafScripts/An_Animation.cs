@@ -3,7 +3,8 @@ using UnityEngine;
 public class An_Animation : MonoBehaviour
 {
     Animator _animator;
-    void Start()
+    bool _savedBoolState = false;
+    void Awake()
     {
         _animator = GetComponent<Animator>();
     }
@@ -14,5 +15,15 @@ public class An_Animation : MonoBehaviour
     public void SetAnomalyOFF()
     {
         _animator.SetBool("isAnomalus", false);
+    }
+
+    private void OnDisable()
+    {
+        _savedBoolState = _animator.GetBool("isAnomalus");
+    }
+
+    private void OnEnable()
+    {
+        _animator.SetBool("isAnomalus", _savedBoolState);
     }
 }
