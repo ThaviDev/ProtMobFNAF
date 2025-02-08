@@ -8,7 +8,6 @@ public class An_Material : MonoBehaviour
     {
         return _normalMat;
     }
-
     public Material GetAnomalusMat()
     {
         return _anomalusMat;

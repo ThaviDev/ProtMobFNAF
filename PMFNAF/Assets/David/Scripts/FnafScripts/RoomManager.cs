@@ -113,6 +113,13 @@ public class RoomManager : MonoBehaviour
                 var renderer = _objectsOnRoom[_myAnomaly.AffectedObject].GetComponent<MeshRenderer>();
                 renderer.material = curAnomalyMat.GetAnomalusMat();
                 break;
+            case 6:
+                _objectsOnRoom[_myAnomaly.AffectedObject].SetActive(true);
+                break;
+            case 7:
+                var curAnomalyObj = _objectsOnRoom[_myAnomaly.AffectedObject].GetComponent<An_Replace>();
+                curAnomalyObj.SetAnomalusObj();
+                break;
         }
     }
 
@@ -146,6 +153,13 @@ public class RoomManager : MonoBehaviour
                 var curAnomalyMat = _objectsOnRoom[_myAnomaly.AffectedObject].GetComponent<An_Material>();
                 var renderer = _objectsOnRoom[_myAnomaly.AffectedObject].GetComponent<MeshRenderer>();
                 renderer.material = curAnomalyMat.GetNormalMat();
+                break;
+            case 6:
+                _objectsOnRoom[_myAnomaly.AffectedObject].SetActive(false);
+                break;
+            case 7:
+                var curAnomalyObj = _objectsOnRoom[_myAnomaly.AffectedObject].GetComponent<An_Replace>();
+                curAnomalyObj.SetNormalObj();
                 break;
         }
     }
