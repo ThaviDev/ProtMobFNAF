@@ -164,6 +164,24 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    public void ActivateRoom()
+    {
+        _roomParent.SetActive(true);
+    }
+    public void DeactivateRoom()
+    {
+        _roomParent.SetActive(false);
+    }
+
+    public void ActivateZombie()
+    {
+        _zombieActor.SetActive(true);
+    }
+    public void DeactivateZombie()
+    {
+        _zombieActor.SetActive(false);
+    }
+
     void Update()
     {
         /*
@@ -173,6 +191,7 @@ public class RoomManager : MonoBehaviour
             DeactivateAnomaly(_currentAnomalies[0]);
         }
         */
+        /*
         if (Input.GetKeyDown(KeyCode.J))
         {
             StartRandomAnomaly();
@@ -197,5 +216,6 @@ public class RoomManager : MonoBehaviour
         {
             _roomParent.SetActive(true);
         }
+        */
     }
 }
