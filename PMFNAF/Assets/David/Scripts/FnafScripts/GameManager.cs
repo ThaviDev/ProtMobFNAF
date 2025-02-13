@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
     [SerializeField] RoomManager[] _myRooms;
     [SerializeField] MainRoom _mainRoom;
-    private int _currentRoom = 1;
+    private int _currentRoom = 0;
     private float _currentTime;
     private int _monsterLocation;
     private int _lastCamera = 1; //este checa cual fue la ultima camara que vio el jugador para regresar a esta al abrir las camaras
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        _mainRoom.ActivateRoom();
+        //_mainRoom.ActivateRoom();
     }
     void Update()
     {

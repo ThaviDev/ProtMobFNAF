@@ -10,8 +10,8 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject _camBtn;
     void Start()
     {
-        ActivateOfficeUI();
         UnpauseGame();
+        ActivateOfficeUI();
     }
     void Update()
     {
