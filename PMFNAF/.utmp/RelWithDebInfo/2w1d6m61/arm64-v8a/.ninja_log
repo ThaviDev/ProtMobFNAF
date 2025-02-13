@@ -1,10 +1,19 @@
 # ninja log v5
 58	1854	7598865220474974	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	22d62515027de15b
-19	1899	7598865220931579	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	eb50aa3b70969200
 84	2017	7598865222130402	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3dbfc65ab68bb4eb
-71	1914	7598865221053636	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1286f93173d02fb
+19	1899	7598865220931579	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	eb50aa3b70969200
 30	2101	7598865222979032	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	897c2467143f229f
+71	1914	7598865221053636	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1286f93173d02fb
 39	1992	7598865221886062	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	25102f594ea9fe39
 48	2289	7598865224896233	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	437c262facfbd1f0
-8	2466	7598865226616647	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b452cde4e15e68a3
 2466	2723	7598865229227922	C:/Users/david/Documents/Unity Proyects/PMFNAF/PMFNAF/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2w1d6m61/obj/arm64-v8a/libgame.so	c63e92cc3c064d62
+8	2466	7598865226616647	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b452cde4e15e68a3
+28	1570	7609250534727460	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	eb50aa3b70969200
+41	1580	7609250534860755	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1286f93173d02fb
+35	1590	7609250534886934	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	22d62515027de15b
+20	1688	7609250535990785	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	25102f594ea9fe39
+56	1704	7609250536077632	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3dbfc65ab68bb4eb
+11	1782	7609250536914903	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	897c2467143f229f
+49	1958	7609250538661015	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	437c262facfbd1f0
+0	2157	7609250540612734	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b452cde4e15e68a3
+2157	2657	7609250545639987	C:/Users/david/Documents/Unity Proyects/PMFNAF/PMFNAF/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2w1d6m61/obj/arm64-v8a/libgame.so	c63e92cc3c064d62
