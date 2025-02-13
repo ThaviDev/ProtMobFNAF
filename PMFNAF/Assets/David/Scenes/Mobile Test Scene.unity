@@ -677,11 +677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55712f298e089014cbbd7ea18caf755f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pcRotSpeed: 0.2
-  _mobRotSpeed: 0.2
-  _startTouchPosition: {x: 0, y: 0}
-  _currentTouchPosition: {x: 0, y: 0}
-  _rb: {fileID: 0}
 --- !u!1 &128302323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &212719342
 Transform:
   m_ObjectHideFlags: 0
@@ -3288,7 +3283,13 @@ MonoBehaviour:
   panSpeed: 0.003
   panLimitX: {x: 3, y: 4.45}
   panLimitY: {x: 3.5, y: 5.79}
-  rotationSpeed: 0.5
+  _rotationSpeed: 0.1
+  rotationLimitX: {x: -45, y: 45}
+  rotationLimitY: {x: -45, y: 45}
+  _minXRotation: 0
+  _maxXRotation: 0
+  _minYRotation: 0
+  _maxYRotation: 0
 --- !u!1 &523727250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2980595827959513972, guid: 90e79b0b794e84d46bd27267a999cb6f,
@@ -8880,13 +8881,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515452176}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0020603617, y: 0.9772994, z: -0.21163952, w: -0.009514247}
+  m_LocalRotation: {x: 0, y: 0.9781476, z: -0.20791169, w: 0}
   m_LocalPosition: {x: 2.74, y: 4.85, z: 3.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 212719342}
-  m_LocalEulerAnglesHint: {x: 24.438, y: 181.116, z: 0}
+  m_LocalEulerAnglesHint: {x: 24, y: 180, z: 0}
 --- !u!114 &1515452181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8905,7 +8906,13 @@ MonoBehaviour:
   panSpeed: 0.003
   panLimitX: {x: -0.5, y: 5.8}
   panLimitY: {x: 3.7, y: 6}
-  rotationSpeed: 0.5
+  _rotationSpeed: 0.07
+  rotationLimitX: {x: 160, y: 220}
+  rotationLimitY: {x: 10, y: 38}
+  _minXRotation: 10
+  _maxXRotation: 38
+  _minYRotation: 160
+  _maxYRotation: 220
 --- !u!1 &1558062615
 GameObject:
   m_ObjectHideFlags: 0
@@ -9565,11 +9572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad869dc608aaf94480acbe1f2688be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mats:
-  - {fileID: 2100000, guid: 7ce8fbdc41827574aa26cd6ce778f644, type: 2}
-  - {fileID: 2100000, guid: e0b4fe14de75aec40b27f805f597f9d8, type: 2}
-  - {fileID: 2100000, guid: c02ebee040f02ca428c4c29ada60b6fd, type: 2}
-  _meshRenderer: {fileID: 83287266}
 --- !u!4 &1617393744
 Transform:
   m_ObjectHideFlags: 0
@@ -9597,7 +9599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd30934daada3414187efc1c041f8172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _object: {fileID: 83287264}
 --- !u!1 &1630071282
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,9 +11,13 @@ public class TouchZoomAndPan : MonoBehaviour
     [SerializeField] private float panSpeed = 0.003f;
     [SerializeField] private Vector2 panLimitX = new Vector2(-10f, 10f);
     [SerializeField] private Vector2 panLimitY = new Vector2(-10f, 10f);
-    [SerializeField] private float rotationSpeed = 0.1f;
+    [SerializeField] private float _rotationSpeed = 0.1f;
     [SerializeField] private Vector2 rotationLimitX = new Vector2(-45f, 45f); // Límites en el eje X
     [SerializeField] private Vector2 rotationLimitY = new Vector2(-45f, 45f); // Límites en el eje Y
+    [SerializeField] private float _minXRotation;
+    [SerializeField] private float _maxXRotation;
+    [SerializeField] private float _minYRotation;
+    [SerializeField] private float _maxYRotation;
 
     private Camera cam;
     private Vector3 initialPosition;
@@ -35,6 +39,31 @@ public class TouchZoomAndPan : MonoBehaviour
     {
         if (Input.touchCount == 1)
         {
+            Touch _touch = Input.GetTouch(0);
+            Vector3 rotationDelta = _rotationSpeed * new Vector3(
+                _touch.deltaPosition.y,
+                -_touch.deltaPosition.x,
+                0
+            );
+
+            // Obtener rotación actual y convertir a rango -180 a 180
+            /*
+            Vector3 currentEuler = transform.eulerAngles;
+            float currentX = currentEuler.x > 180f ? currentEuler.x - 360f : currentEuler.x;
+            float currentY = currentEuler.y > 180f ? currentEuler.y - 360f : currentEuler.y;
+            */
+
+            // Calcular rotacion con limites
+            float newX = Mathf.Clamp(transform.eulerAngles.x + rotationDelta.x, _minXRotation, _maxXRotation);
+            float newY = Mathf.Clamp(transform.eulerAngles.y + rotationDelta.y, _minYRotation, _maxYRotation);
+
+            // Aplicar rotacion
+            transform.eulerAngles = new Vector3(newX, newY, transform.eulerAngles.z);
+
+            /*
+            transform.eulerAngles += _rotationSpeed * new Vector3(_touch.deltaPosition.y,
+                _touch.deltaPosition.x * -1, z: 0);
+            /*
             // Desplazamiento con un dedo
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
@@ -42,6 +71,7 @@ public class TouchZoomAndPan : MonoBehaviour
                 Vector2 touchDelta = touch.deltaPosition;
                 RotateCamera(touchDelta);
             }
+            */
         }
         else if (Input.touchCount == 2)
         {
@@ -83,8 +113,8 @@ public class TouchZoomAndPan : MonoBehaviour
         Vector3 currentRotation = transform.eulerAngles;
 
         // Calcular la nueva rotación
-        float newRotationX = currentRotation.x - delta.y * rotationSpeed;
-        float newRotationY = currentRotation.y + delta.x * rotationSpeed;
+        float newRotationX = currentRotation.x - delta.y * _rotationSpeed;
+        float newRotationY = currentRotation.y + delta.x * _rotationSpeed;
 
         // Aplicar límites de rotación
         newRotationX = ClampAngle(newRotationX, rotationLimitX.x, rotationLimitX.y);
