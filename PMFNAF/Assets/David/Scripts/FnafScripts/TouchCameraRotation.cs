@@ -13,8 +13,8 @@ public class TouchCameraRotation : MonoBehaviour
     private float targetRotationY;
     private float currentVelocity;
 
-    private GraphicRaycaster graphicRaycaster; // Para detectar UI
-    private EventSystem eventSystem;
+    [SerializeField] private GraphicRaycaster graphicRaycaster; // Para detectar UI
+    [SerializeField] private EventSystem eventSystem;
 
     void Update()
     {
@@ -26,6 +26,17 @@ public class TouchCameraRotation : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
+            // Verificar si algún toque está sobre UI
+            bool isTouchingUI = false;
+            foreach (Touch touch in Input.touches)
+            {
+                if (IsPointerOverUIObject(touch.position))
+                {
+                    isTouchingUI = true;
+                    break;
+                }
+            }
+            /*
             // Verificar primero si hay toques sobre UI
             foreach (Touch touch in Input.touches)
             {
@@ -33,28 +44,31 @@ public class TouchCameraRotation : MonoBehaviour
                 {
                     return; // Si cualquier toque está sobre UI, no procesar
                 }
-            }
+            } */
 
-            // Procesar toques solo si ninguno está sobre UI
-            foreach (Touch touch in Input.touches)
+            // Si ningún toque está sobre UI, procesar la rotación
+            if (!isTouchingUI)
             {
-                float screenWidth = Screen.width;
-                float activeZoneLeft = screenWidth * uiDeadZone;
-                float activeZoneRight = screenWidth * (1 - uiDeadZone);
-
-                if (touch.position.x < activeZoneLeft || touch.position.x > activeZoneRight) continue;
-
-                if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                foreach (Touch touch in Input.touches)
                 {
-                    float screenMiddle = Screen.width * 0.5f;
+                    float screenWidth = Screen.width;
+                    float activeZoneLeft = screenWidth * uiDeadZone;
+                    float activeZoneRight = screenWidth * (1 - uiDeadZone);
 
-                    if (touch.position.x < screenMiddle)
+                    if (touch.position.x < activeZoneLeft || touch.position.x > activeZoneRight) continue;
+
+                    if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
                     {
-                        targetRotationY -= rotationSpeed;
-                    }
-                    else
-                    {
-                        targetRotationY += rotationSpeed;
+                        float screenMiddle = Screen.width * 0.5f;
+
+                        if (touch.position.x < screenMiddle)
+                        {
+                            targetRotationY -= rotationSpeed;
+                        }
+                        else
+                        {
+                            targetRotationY += rotationSpeed;
+                        }
                     }
                 }
             }
@@ -78,15 +92,23 @@ public class TouchCameraRotation : MonoBehaviour
             transform.eulerAngles.z
         );
     }
-    private bool IsPointerOverUIObject(int fingerId = -1)
+    private bool IsPointerOverUIObject(Vector2 touchPosition)
     {
-        if (fingerId != -1)
+        if (graphicRaycaster == null || eventSystem == null)
         {
-            return EventSystem.current.IsPointerOverGameObject(fingerId);
+            Debug.LogWarning("GraphicRaycaster o EventSystem no encontrados.");
+            return false;
         }
-        else
-        {
-            return EventSystem.current.IsPointerOverGameObject();
-        }
+
+        // Crear un PointerEventData y configurarlo con la posición del toque
+        PointerEventData eventData = new PointerEventData(eventSystem);
+        eventData.position = touchPosition;
+
+        // Realizar el raycast
+        System.Collections.Generic.List<RaycastResult> results = new System.Collections.Generic.List<RaycastResult>();
+        graphicRaycaster.Raycast(eventData, results);
+
+        // Si hay resultados, el toque está sobre UI
+        return results.Count > 0;
     }
 }

@@ -516,6 +516,8 @@ MonoBehaviour:
   smoothTime: 0.1
   uiDeadZone: 0.05
   yRotationLimits: {x: -65, y: 65}
+  graphicRaycaster: {fileID: 449798401}
+  eventSystem: {fileID: 212523137}
 --- !u!114 &57774683
 MonoBehaviour:
   m_ObjectHideFlags: 0
