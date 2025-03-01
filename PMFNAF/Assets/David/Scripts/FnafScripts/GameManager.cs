@@ -5,10 +5,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] RoomManager[] _myRooms;
     [SerializeField] MainRoom _mainRoom;
     private int _currentRoom = 0;
-    private float _currentTime;
-    private int _monsterLocation;
+    private float _currentAgresivity;
+    /* -1: ningun lado
+     * -2: en la puerta derecha de la oficina
+     * -3: en la puerta izquierda de la oficina
+     * 0: adentro de la oficina
+     * 1: habitacion 1
+     * 2...
+     */
     private int _lastCamera = 1; //este checa cual fue la ultima camara que vio el jugador para regresar a esta al abrir las camaras
     [SerializeField] private HideCamera _hideCamera;
+    private bool _isInOffice;
+    public bool GetIsInOffice
+    {
+        get { return _isInOffice; }
+    }
     public static GameManager Instance
     {
         get
@@ -26,6 +37,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        _isInOffice = true;
         //_mainRoom.ActivateRoom();
     }
     void Update()
@@ -65,10 +77,12 @@ public class GameManager : MonoBehaviour
 
         if(newRoom == 0)
         {
+            _isInOffice = true;
             _mainRoom.ActivateRoom();
             _lastCamera = _currentRoom;
         } else
         {
+            _isInOffice = false;
             _myRooms[newRoom - 1].ActivateRoom();
         }
         _currentRoom = newRoom;

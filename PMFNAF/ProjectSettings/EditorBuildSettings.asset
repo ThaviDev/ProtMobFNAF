@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/David/Scenes/Main Menu Scene.unity
     guid: df3d1de6927322b4f995d138bf2aed38
   - enabled: 1
-    path: Assets/David/Scenes/Mobile Test Scene.unity
+    path: Assets/David/Scenes/GameScene.unity
     guid: a2f4d24ccbb0de64cbd90aa4563a2171
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,

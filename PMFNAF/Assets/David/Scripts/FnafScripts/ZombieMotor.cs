@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class ZombieMotor : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] float _startAgro;
+    [SerializeField] float _curAgro;
+    [SerializeField] float _curTimeOnRoom;
+    [SerializeField] float _startTimeOnRoom;
+    [SerializeField] int _curRoom;
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         
+    }
+    void UpdateAgresivity()
+    {
+
     }
 }

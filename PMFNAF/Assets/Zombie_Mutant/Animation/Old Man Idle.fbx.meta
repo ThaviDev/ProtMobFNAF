@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3e3f5c3adb83cd4ba71df14745b2aea
+guid: a84acd29d1b51a947b816bdf45d547df
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -35,7 +35,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 121
+      lastFrame: 169
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -61,10 +61,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
-    lODScreenPercentages:
-    - 0.25
-    - 0.125
-    - 0.01
+    lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
