@@ -11,7 +11,7 @@ public class RoomManager : MonoBehaviour
     //[SerializeField] List<int> _currentIDAnomalies;
     [SerializeField] GameObject[] _objectsOnRoom;
 
-    [SerializeField] private GameObject _zombieActor;
+    [SerializeField] private GameObject[] _enemiesActors;
     [SerializeField] private GameObject _roomParent;
 
 
@@ -171,15 +171,6 @@ public class RoomManager : MonoBehaviour
     public void DeactivateRoom()
     {
         _roomParent.SetActive(false);
-    }
-
-    public void ActivateZombie()
-    {
-        _zombieActor.SetActive(true);
-    }
-    public void DeactivateZombie()
-    {
-        _zombieActor.SetActive(false);
     }
 
     void Update()
