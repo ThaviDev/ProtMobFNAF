@@ -8,6 +8,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject _hideUI;
     [SerializeField] GameObject _pauseUI;
     [SerializeField] GameObject _camBtn;
+    [SerializeField] GameObject _detectGhostUI;
     void Start()
     {
         UnpauseGame();
@@ -39,6 +40,7 @@ public class GameUI : MonoBehaviour
         _cameraUI.SetActive(true);
         _officeUI.SetActive(false);
         _hideUI.SetActive(false);
+        _detectGhostUI.SetActive(true);
     }
     public void ActivateOfficeUI()
     {
@@ -47,6 +49,7 @@ public class GameUI : MonoBehaviour
         _officeUI.SetActive(true);
         _hideUI.SetActive(false);
         _camBtn.SetActive(true);
+        _detectGhostUI.SetActive(false);
     }
     public void ActivateHideUI()
     {

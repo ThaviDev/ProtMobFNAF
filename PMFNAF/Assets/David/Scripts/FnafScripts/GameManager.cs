@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private int _lastCamera = 1; //este checa cual fue la ultima camara que vio el jugador para regresar a esta al abrir las camaras
     [SerializeField] private HideCamera _hideCamera;
     private bool _isInOffice;
+    [SerializeField] private Canvas _cameraCanvas;
     public bool GetIsInOffice
     {
         get { return _isInOffice; }
@@ -67,6 +68,10 @@ public class GameManager : MonoBehaviour
 
     public void ChangeRooms(int newRoom)
     {
+        if (_currentRoom == newRoom)
+        {
+            return;
+        }
         if (_currentRoom == 0)
         {
             _mainRoom.DeactivateRoom();
@@ -86,6 +91,7 @@ public class GameManager : MonoBehaviour
             _myRooms[newRoom - 1].ActivateRoom();
         }
         _currentRoom = newRoom;
+        _cameraCanvas.worldCamera = Camera.main;
     }
 
     public void GoToCameras()
